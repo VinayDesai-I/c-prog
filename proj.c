@@ -4,11 +4,11 @@
 struct stu_info
 {
     long int rollno;
-    char name[16];
+    char name[20];
     char branch[10];
     char bgrp[5];
     char addr[100];
-}temp5;
+}temp;
 
 int main(){
 
@@ -16,6 +16,7 @@ int main(){
     
     printf("Enter The Number of Students to Add:");
     scanf("%d", &n);
+    getchar();
 
     struct stu_info s[n];
 
@@ -23,7 +24,6 @@ int main(){
     {
         // full name
         printf("\nEnter Full Name of Student:");
-        getchar();
         fgets(s[i].name, sizeof(s[i].name), stdin);
         s[i].name[strcspn(s[i].name, "\n")] = '\0';
 
@@ -40,7 +40,7 @@ int main(){
         scanf("%s", &s[i].bgrp);
 
         // address
-        printf("\nEnter Address of Student:");
+        printf("Enter Address of Student:");
         getchar();
         fgets(s[i].addr, sizeof(s[i].addr), stdin);
         s[i].addr[strcspn(s[i].addr, "\n")] = '\0';
@@ -72,35 +72,35 @@ int main(){
         {
             if (s[y].rollno > s[y + 1].rollno)
             {
-                temp5 = s[y];
+                temp = s[y];
                 s[y] = s[y + 1];
-                s[y + 1] = temp5;
+                s[y + 1] = temp;
             }
         }
     }
 
-    printf("\nRoll No \tName \t\tBranch \tTotal Marks");
+    printf("\nRoll No. \tName \t\t\tBranch \tBlood Group \tAddress");
 
     for (i = 0; i < n; i++)
     {
         if (s[i].rollno < 2000000)
         {
-            printf("\n%ld \t%s \t\t%s \t%d", s[i].rollno, s[i].name, s[i].branch, s[i].bgrp, s[i].addr);
+            printf("\n%ld \t%s \t\t%s \t%s \t%s", s[i].rollno, s[i].name, s[i].branch, s[i].bgrp, s[i].addr);
         }
         else if (s[i].rollno < 3000000)
         {
             printf("\n");
-            printf("\n%ld \t%s \t\t%s \t%d", s[i].rollno, s[i].name, s[i].branch, s[i].bgrp, s[i].addr);
+            printf("\n%ld \t%s \t%s \t%s \t%s", s[i].rollno, s[i].name, s[i].branch, s[i].bgrp, s[i].addr);
         }
         else if (s[i].rollno < 4000000)
         {
             printf("\n");
-            printf("\n%ld \t%s \t\t%s \t%d", s[i].rollno, s[i].name, s[i].branch, s[i].bgrp, s[i].addr);
+            printf("\n%ld \t%s \t\t%s \t%s \t%s", s[i].rollno, s[i].name, s[i].branch, s[i].bgrp, s[i].addr);
         }
         else if (s[i].rollno < 5000000)
         {
             printf("\n");
-            printf("\n%ld \t%s \t\t%s \t%d", s[i].rollno, s[i].name, s[i].branch, s[i].bgrp, s[i].addr);
+            printf("\n%ld \t%s \t\t%s \t%s \t%s", s[i].rollno, s[i].name, s[i].branch, s[i].bgrp, s[i].addr);
         }
         
         
