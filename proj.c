@@ -58,37 +58,23 @@ int main(){
 
     }
 
-    printf("Roll No. \tFull Name \tBranch \t\tTotal Marks\n");
+    /*printf("Roll No. \tFull Name \tBranch \t\tTotal Marks\n");
 
     for (i = 0; i < n; i++)
     {
         printf("\n%ld \t%s \t%s \t\t%d\n", s[i].rollno, s[i].name, s[i].branch, s[i].t_mks);
-    }
+    }*/
 
 
     for (x = 1; x < n; x++)
     {
         for (y = 0; y < n - x; y++)
         {
-            if (s[y].t_mks > s[y + 1].t_mks)
+            if (s[y].rollno > s[y + 1].rollno)
             {
                 temp5 = s[y];
                 s[y] = s[y + 1];
                 s[y + 1] = temp5;
-                /*temp = s[y].t_mks;
-                strcpy(tn, s[y].name);
-                strcpy(tn1, s[y].branch);
-                temp1 = s[y].rollno;
-
-                s[y].t_mks = s[y +1].t_mks;
-                strcpy(s[y].name, s[y + 1].name);
-                strcpy(s[y].branch, s[y + 1].branch);
-                s[y].rollno = s[y + 1].rollno;
-
-                s[y + 1].t_mks = temp;
-                strcpy(s[y + 1].name, tn);
-                strcpy(s[y + 1].branch, tn1);
-                s[y + 1].rollno = temp1;*/
             }
         }
     }
@@ -97,7 +83,27 @@ int main(){
 
     for (i = 0; i < n; i++)
     {
-        printf("\n%ld \t%s \t\t%s \t%d", s[i].rollno, s[i].name, s[i].branch, s[i].t_mks);
+        if (s[i].rollno < 2000000)
+        {
+            printf("\n%ld \t%s \t\t%s \t%d", s[i].rollno, s[i].name, s[i].branch, s[i].bgrp, s[i].addr);
+        }
+        else if (s[i].rollno < 3000000)
+        {
+            printf("\n");
+            printf("\n%ld \t%s \t\t%s \t%d", s[i].rollno, s[i].name, s[i].branch, s[i].bgrp, s[i].addr);
+        }
+        else if (s[i].rollno < 4000000)
+        {
+            printf("\n");
+            printf("\n%ld \t%s \t\t%s \t%d", s[i].rollno, s[i].name, s[i].branch, s[i].bgrp, s[i].addr);
+        }
+        else if (s[i].rollno < 5000000)
+        {
+            printf("\n");
+            printf("\n%ld \t%s \t\t%s \t%d", s[i].rollno, s[i].name, s[i].branch, s[i].bgrp, s[i].addr);
+        }
+        
+        
     }
 
     return 0;
