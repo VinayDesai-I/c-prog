@@ -6,15 +6,13 @@ struct stu_info
     long int rollno;
     char name[16];
     char branch[10];
-    int sub_mks[100];
-    int t_mks;
-};
+    char bgrp[5];
+    char addr[100];
+}temp5;
 
 int main(){
 
-    int n, i, j = 0, k, l, x, y, temp;
-    long int temp1;
-    char tn[16], tn1[10];
+    int n, i, k, x, y;
     
     printf("Enter The Number of Students to Add:");
     scanf("%d", &n);
@@ -37,22 +35,34 @@ int main(){
         printf("Enter Student Branch:");
         scanf("%s", &s[i].branch);
 
+        // blood group
+        printf("Enter Student Blood Group:");
+        scanf("%s", &s[i].bgrp);
+
+        // address
+        printf("\nEnter Address of Student:");
+        getchar();
+        fgets(s[i].addr, sizeof(s[i].addr), stdin);
+        s[i].addr[strcspn(s[i].addr, "\n")] = '\0';
+
+
+
         // marks
-        s[i].t_mks = 0;
+        /*s[i].t_mks = 0;
         for (k = 0; k < 5; k++)
         {
             printf("Enter Marks of %d Subject:", k+1);
             scanf("%d", &s[i].sub_mks[k]);
             s[i].t_mks += s[i].sub_mks[k];
-        }
+        }*/
 
     }
 
     printf("Roll No. \tFull Name \tBranch \t\tTotal Marks\n");
 
-    for (l = 0; l < n; l++)
+    for (i = 0; i < n; i++)
     {
-        printf("\n%ld \t%s \t%s \t\t%d\n", s[l].rollno, s[l].name, s[l].branch, s[l].t_mks);
+        printf("\n%ld \t%s \t%s \t\t%d\n", s[i].rollno, s[i].name, s[i].branch, s[i].t_mks);
     }
 
 
@@ -62,7 +72,10 @@ int main(){
         {
             if (s[y].t_mks > s[y + 1].t_mks)
             {
-                temp = s[y].t_mks;
+                temp5 = s[y];
+                s[y] = s[y + 1];
+                s[y + 1] = temp5;
+                /*temp = s[y].t_mks;
                 strcpy(tn, s[y].name);
                 strcpy(tn1, s[y].branch);
                 temp1 = s[y].rollno;
@@ -75,7 +88,7 @@ int main(){
                 s[y + 1].t_mks = temp;
                 strcpy(s[y + 1].name, tn);
                 strcpy(s[y + 1].branch, tn1);
-                s[y + 1].rollno = temp1;
+                s[y + 1].rollno = temp1;*/
             }
         }
     }
