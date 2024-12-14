@@ -143,7 +143,7 @@ void studentrollinfo()
     int i;
 
     printf("Enter Student Roll Number:");
-    scanf("%d", &rno);
+    scanf("%ld", &rno);
 
     for (i = 0; i <= stuno; i++)
     {
