@@ -6,6 +6,80 @@ struct stu_info
     long int rollno;
     char name[20];
     char branch[10];
+    char bgrp[10];
+    char addr[100];
+}temp;
+
+int main(){
+
+    int n, i, x, y;
+    
+    printf("Enter The Number of Students to Add:");
+    scanf("%d", &n);
+    getchar();
+
+    struct stu_info s[n];
+
+    for (i = 0; i < n; i++)
+    {
+        // full name
+        printf("\nEnter Full Name of Student:");
+        fgets(s[i].name, sizeof(s[i].name), stdin);
+        s[i].name[strcspn(s[i].name, "\n")] = '\0';
+
+        // roll number
+        printf("Enter Student Roll Number:");
+        scanf("%d", &s[i].rollno);
+
+        // branch
+        printf("Enter Student Branch:");
+        scanf("%s", &s[i].branch);
+
+        // blood group
+        printf("Enter Student Blood Group:");
+        scanf("%s", &s[i].bgrp);
+
+        // address
+        printf("Enter Address of Student:");
+        getchar();
+        fgets(s[i].addr, sizeof(s[i].addr), stdin);
+        s[i].addr[strcspn(s[i].addr, "\n")] = '\0';
+
+    }
+
+
+    for (x = 1; x < n; x++)
+    {
+        for (y = 0; y < n - x; y++)
+        {
+            if (s[y].rollno > s[y + 1].rollno)
+            {
+                temp = s[y];
+                s[y] = s[y + 1];
+                s[y + 1] = temp;
+            }
+        }
+    }
+
+    printf("\nRoll Number  Name                Branch  Blood-Group  Address");
+
+    for (i = 0; i < n; i++)
+    {
+        printf("\n");
+        printf("\n%-11d  %-20s %-6s  %-11s  %s", s[i].rollno, s[i].name, s[i].branch, s[i].bgrp, s[i].addr);
+    }
+
+    return 0;
+}
+
+/*#include<stdio.h>
+#include<string.h>
+
+struct stu_info
+{
+    long int rollno;
+    char name[20];
+    char branch[10];
     char bgrp[5];
     char addr[100];
 }temp;
@@ -65,8 +139,7 @@ int main(){
         printf("\n%ld \t%s \t%s \t\t%d\n", s[i].rollno, s[i].name, s[i].branch, s[i].t_mks);
     }*/
 
-
-    for (x = 1; x < n; x++)
+    /*for (x = 1; x < n; x++)
     {
         for (y = 0; y < n - x; y++)
         {
@@ -107,4 +180,4 @@ int main(){
     }
 
     return 0;
-}
+}*/
