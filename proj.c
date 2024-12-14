@@ -20,7 +20,7 @@ int main()
 {
 
 
-    int n, i, x, y, size, ch;
+    int n, i, x, y, ch;
     long int n1;
 
     printf("\t\tWelcome To Student Information System (SIS)");
