@@ -50,7 +50,7 @@ int main()
             break;
         }
 
-        defualt:
+        default:
         {
             printf("Invalid Option!");
             break;
@@ -58,6 +58,8 @@ int main()
         }
 
     } while (ch != 3);
+
+    return 0;
 }
 
 void studentinfo()
