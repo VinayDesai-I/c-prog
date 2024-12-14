@@ -20,7 +20,7 @@ int main()
 {
 
 
-    int n, i, x, y, ch;
+    int n, i, x, y, size, ch;
     long int n1;
 
     printf("\t\tWelcome To Student Information System (SIS)");
@@ -129,7 +129,7 @@ void studentinfo()
         }
     }
 
-    printf("\nRoll Number  Name                Branch  Blood-Group   Address");
+    printf("\nRoll Number  Name                 Branch  Blood-Group  Address");
 
     for (i = 0; i < stuno; i++)
     {
@@ -140,19 +140,25 @@ void studentinfo()
 void studentrollinfo()
 {
     long int rno;
-    int i;
+    int i, ntf = 1;
 
     printf("Enter Student Roll Number:");
     scanf("%ld", &rno);
 
-    for (i = 0; i <= stuno; i++)
+    for (i = 0; i < stuno; i++)
     {
         if (rno == s[i].rollno)
         {
-            printf("\nRoll Number  Name                Branch  Blood-Group   Address");
+            printf("\nRoll Number  Name                 Branch  Blood-Group  Address");
             printf("\n%-11ld  %-20s %-6s  %-11s  %s", s[i].rollno, s[i].name, s[i].branch, s[i].bgrp, s[i].addr);   
+            ntf = 0;
         }
     }
+    if (ntf)
+    {
+        printf("Not Found!");
+    }
+
 } 
 
 /*#include<stdio.h>
