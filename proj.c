@@ -64,7 +64,7 @@ int main()
 
 void studentinfo()
 {
-    int n, i, x, y, size;
+    int n, i, x, y;
 
     printf("Enter The Number of Students to Add:");
     scanf("%d", &n);
