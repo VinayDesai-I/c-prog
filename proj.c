@@ -27,7 +27,7 @@ int main()
 
     do
     {
-        printf("\n\n1 for Entering Student Information\n2 for Displaying paritcular Student Information\n3 for Exit\nEnter Your Choice:");
+        printf("\n\n1 for Entering Student Information\n2 for Displaying Paritcular Student Information\n3 for Exit\nEnter Your Choice:");
         scanf("%d", &ch);
         getchar();
 
@@ -103,7 +103,7 @@ void studentinfo()
         getchar();
         fgets(s[i].addr, sizeof(s[i].addr), stdin);
         char *nlineremove1 = s[i].addr;
-        while (*nlineremove != '\0')
+        while (*nlineremove1 != '\0')
         {
             if (*nlineremove1 == '\n')
             {
